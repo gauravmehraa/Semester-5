@@ -1,0 +1,124 @@
+*Artificial Intelligence*
+Unit 1 - Fundamentals of AI and Problem Solving Algorithms
+What is AI - Foundations, History and State of the Art of AI
+Intelligent Agents - Agents and Environments, Nature of Environments, Structure of Agents
+Problem Solving by Searching - Problem-Solving Agents, Example Problems, Searching for Solutions, Uninformed Search Strategies, Informed (Heuristic) Search Strategies, Heuristic Functions
+Iterative Improvement Algorithms: Hill Climbing and Simulated Annealing, Genetic Algorithms
+
+Unit 2 - Game Playing & Symbolic AI
+Game Playing - Overview and Example Domain, Min-max Search, Adding Alpha-Beta Cutoffs
+First Order Predicate Logic -Unification – Forward Chaining-Backward Chaining – Resolution – Knowledge Representation – Ontological Engineering-Categories and Objects – Events – Mental Events and Mental Objects – Reasoning Systems for Categories – Reasoning with Default Information
+
+Unit 3 - Probabilistic Reasoning-Based AI
+Probabilistic Reasoning: Representing Knowledge in an Uncertain Domain, The Semantics of Belief Networks, Efficient Representation of Conditional Distribution, Exact inference in Bayesian network, Approximate inference in Bayesian Network
+Probabilistic Reasoning over Time: Time and uncertainty, Inference in temporal models, Hidden Markov Models, Dynamic Bayesian Networks
+
+Unit 4 - Statistical & Reinforcement Learning
+Complex Decisions - Sequential Decisions Problem, Value Iteration, Policy Iteration
+Statistical Learning - Learning with Complete Data, Learning with Hidden Variables
+Reinforcement learning - Passive Reinforcement Learning, Active Reinforcement Learning, Generalization in Reinforcement Learning, Policy Search, Applications of Reinforcement Learning
+
+
+*Software Testing and Quality Assurance*
+Unit 1 - Software Testing and Introduction to Quality, Software Testing Techniques
+Software Testing and Introduction to Quality - Introduction, Nature of Errors, Example for Testing, Definition of Quality, QA, QC, QM, and SQA, Software Development Life Cycle, Software Quaity Factors
+Verification and Validation - Definition of V&V, Different Types of V&V Mechanisms, Concepts of Software Reviews, Inspection and Walkthrough
+Software Testing Techniques - Testing Fundamentals, Test Case Desgin, White Box Testing and Its Types, Black Box Testing and Its Types
+
+
+Software Testing Strategies - Strategic Approach to Software Testing, Unit Testing, Integration Testing, Validation Testing, System Testing
+Software Metrics: Concept and Developing Metrics, Different Types of Metrics, Complexity Metrics
+Defect Manaegement - Definition of Defects, Defect Management Process, Defect Reporting, Metrics Related to Defects, Using Defests for Process Improvement
+
+Unit 3 - Software Quality Assurance, Quality Improvement
+Software Quality Assurance - Quality Concepts, Quality Movement, Background Issues, SQA Activities, Software Reviews, Formal Technical Reviews, Formal Approaches to SQA, Statistical Quality Assurance, Software Reliability, The ISO 9000 Quality Standards, SQA Plan, Six Sigma, Informal Reviews
+Quality Improvement - Introduction, Pareto Diagrams, Cause-effect Diagrams, Scatter Diagrams, Run Charts
+Quality Costs - Defining Quality Costs, Types of Quality Costs, Quality Cost Measurement, Utilizing Quality Costs for Decision-Making
+
+
+*Information and Network Security*
+Unit 1 - Introduction, Classical Encryption Techniques, Public-Key Cryptography and RSA
+Introduction - Security Trends, The OSI Security Architecture, Security Attacks, Security Services, Security Mechanisms
+Classical Encryption Techniques - Symmetric Cipher Model, Substitution Techniques, Transposition Techniques, Steganography, Block Cipher Principles, The Data Encryption Standard, The Strength of DES, AES (without round details), Multiple Encryption and Triple DES, Block Cipher Modes of Operation, Stream Ciphers
+Public-Key Cryptography and RSA - Principles of Public-Key Cryptosystems, The RSA Algorithm
+
+Unit 2 - Key Management, Digital Signatures and Authentication, Applications
+Key Management - Public-Key Cryptosystems, Key Management, Diffie-Hellman Key Exchange
+Message Authentication and Hash Functions - Authentication Requirements, Authentication Functions, Message Authentication Codes, Hash Functions, Security of Hash Functions and MACs, Secure Hash Algorithm, HMAC Digital Signatures, Authentication Protocols, Digital Signatures
+Standard Authentication Applications - Kerberos, X.509 Authentication, Public-Key Infrastructure
+
+Unit 3 - Electronic Mail Security, Web Security, Intrusion, Malicious Software, Firewalls
+Electronic Mail Security - Pretty Good Privacy, S/MIME IP Security: Overview, Architecture, Authentication Header, Encapsulating Security Payload, Combining Security Associations, Key Management
+Web Security - Web Security Considerations, Secure Sockets Layer and Transport Layer Security, Secure Electronic Transactions
+Intrusion - Intruders, Intrusion Techniques, Intrusion Detection
+Malicious Software - Viruses and Related Threats, Virus Countermeasures, DDoS
+Firewalls - Firewall Design Principles, Types of Firewalls
+
+
+*Optimization Techniques*
+Unit 1 - Introduction, Introduction to Simplex Methods
+Introduction - Need for Optimization and Historial Development Classification and Formulation of Optimization Problem, Classical Optimization Methods, Calculus Based Methods, Enumerative Schemes, Random Search Algorithms, Evolutionary Algorithms
+Linear Programming Model - Formulation, Objective Function, Constraints, Decision Variables, Canonical and Standard Forms, Parameters and Variables, Graphical Method for Two Variable Problems
+Introduction to Simplex Methods - Simple Simplex Algorithm and Tabluar Representation, Types of Solution (such as Feasible/Non-Feasible, Degenerate/Non-Degenerate, Optimal/Sub-Optimal, Unique/Alternate/Infinite Optimal, Bounded/Unbounded Value) and Solution and their Interpretations from Simplex Table, Cycling Phenonema, Mutual Solution of Problems involving upto 3 Iterations, Integer Programming, Brand and Bound Algorithm, Cutting Plane Algorithm
+
+Unit 2 - Advanced Simplex Methods, Dual Simplex Algorithm and Duality
+Artificial Variables, Big-M and Two Phase Simplex Methods, Degeneracy, Unbounded Solution, Infeasible Solution, Dual Simplex Method, Duality Concept, Dual Problem Formulation, Dual Simplex Method, Primal Sub-Optimal-Dual Not Feasible, and other Primal-Dual Relations, Interpretation of Dual Variables, Duality Properties, Sensitivity Analysis for Variation of Paramter at a time
+
+Unit 3 - Transportation and Assignment Models
+As Special Cases of LP Model, Problem Formulation and Optimality Conditions in Vogel's Penalty and Hungarian Methods of Solution, Travelling Salesman Problem as a Special Case of Assignment Problem, Sensitivity Analysis, Manual Solution of Problems involving upto 3 Iterations
+
+
+*Web Services*
+Unit 1 - Introduction to Web Services using SOAP
+Web Services Basics - What Are Web Services. Types of Web Services, Software-as-a-Service, Characteristics of Web Services, Service Oriented Architecture
+Distributed Computing Infrastructure - Distributed computing and Internet protocols, client-server model, characteristics of overview of XML, SOAP
+Building Web Services with JAX-WS, Registering and Discovering Web Services, Web Services Development Life Cycle, Developing and consuming simple Web Services across platform
+
+Unit 2 - RESTFUL Web Services
+The REST Architectural Style - Introducing HTTP, The core architectural elements of a RESTful system, Description and discovery of RESTful web services
+Java tools and frameworks for building RESTful web services, JSON message format and tools and frameworks around JSON, Build RESTful web services with JAX-RS APIs, The Description and Discovery of RESTful Web Services, Design guidelines for building RESTful web services, Secure RESTful web services
+Introduction to Node.js, Features of Node.js, applications of Node.js, Environment Setup, Creating Node.js Application, Callback, Node Package Manager (NPM), Event-Driven Programming, Creating Web server, Express Overview
+
+Unit 3 - GraphQL
+GraphQL - Introduction, GraphQL is the better REST, Core Concepts, Apollo client, the Schema Definition Language (SDL)
+Queries & Mutations, Schemas and Types, Refetching queries in Apollo Client, Subscriptions
+GraphQL client and server, Connecting with Database via Prisma, GraphQL Tools and Ecosystem, Security
+
+Unit 4 - Apply and develop Service-Oriented Applications with WCF and get familiarize with latest web service platforms
+What Is Windows Communication Foundation, Fundamental Windows Communication Foundation Concepts
+Windows Communication Foundation Architecture, WCF and .NET Framework Client Profile, Basic WCF Programming
+WCF Feature Details. Web Service QoS, Introduction Latest web services platforms
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
