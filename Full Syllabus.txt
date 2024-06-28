@@ -57,7 +57,7 @@ Targeted Malicious Code - Trapdoors, Salami Attack
 Controls against Program Threats - Development Controls, Peer Reviews, Hazard Analysis
 
 Unit 3 - Digital Signatures and Authentication
-Message Authentication and Hash Functions - Authentication Requirements, Authentication Functions, Message Authentication Codes, Hash Functions, Security of Hash Functions and Macs, Secure Hash Algorithm, HMAC
+Message Authentication and Hash Functions - Authentication Requirements, Authentication Functions, Message Authentication Codes, Hash Functions, Security of Hash Functions and MACs, Secure Hash Algorithm, HMAC
 Digital Signatures and Authentication - Digital Signatures, Authentication Protocols, Digital Signature Standard
 Authentication Applications - Kerberos, X.509 Authentication, Public-Key Infrastructure
 Network Access Control - Network Access Control, Extensible Authentication Protocol, IEEE 802.1X Port-Based Network Access Control
@@ -66,7 +66,7 @@ Wireless Network Security - Mobile Device Security, Wireless LAN Security
 Unit 4 - Electronic Mail Security, Web Security, Intrusion, Firewalls, Biometric Security
 Electronic Mail Security - Pretty Good Privacy, S/MIME, DomainKeys Identified Mail
 IP Security - Overview, Architecture, Authentication Header, Encapsulating Security Payload, Combining Security Associations, Key Management
-Web Security - Web Security Considerations, Secure Socket Layer and Transport Layer Security, HTTPS standard , Secure Socket Shell
+Web Security - Web Security Considerations, Secure Socket Layer and Transport Layer Security, HTTPS Standard, Secure Socket Shell
 Intrusion - Intruders, Intrusion Techniques, Intrusion Detection
 Firewalls - Firewall Design Principles, Types of Firewalls
 Security in Online Transactions
@@ -75,20 +75,20 @@ Security in Online Transactions
 Unit 1 - Introduction, Introduction to Simplex Methods
 Introduction to Operation Research and Optimization - Need of Optimization, Historical Development, Classification and Formulation of Optimization Problem, Classical Optimization Methods, Calculus Based Methods, Random Search Algorithm
 Linear Programming Problem - Formulation, Objective Function Constraints, Decision Variables, Canonical and Standard Form, Parameter and Variables, Graphical LPP for Two Variables
-Introduction to Simplex Method - Simplex Algorithm and Tabular Representation, Types of Solution: Feasible/Non-Feasible, Generate/Non-Generate, Unique/Alternate/Infinite, Bounded/Unbounded Solutions and their Interpretation from Simplex Table, Mutual Solutions of Problem Solving up to Four Iterations
+Introduction to Simplex Method - Simplex Algorithm and Tabular Representation, Types of Solution: Feasible/Non-Feasible, Generate/Non-Generate, Unique/Alternate/Infinite, Bounded/Unbounded, Solutions and their Interpretation from Simplex Table, Mutual Solutions of Problem Solving up to Four Iterations
 Integer Programming - Branch and Bound Technique, Cutting Plane Algorithm
-Sensitivity Analysis - Change in Objective Function Coefficient(Cj), Change in the Coefficient of Non Basic Variable, Change in Coefficient of Non Basic Variable in Cost Minimization Problem
+Sensitivity Analysis - Change in Objective Function Coefficient (Cj), Change in the Coefficient of Non Basic Variable, Change in Coefficient of Non Basic Variable in Cost Minimization Problem
 
 Unit 2 - Advanced Simplex Methods, Dual Simplex Algorithm and Duality
-Artificial Variables, Big M Methods, Bounded/Unbounded Solution, Pseudo Optimum Solution, Degeneracy
-Two Phase Simplex Method, Dual Simplex method, Relationship of Primal and Dual, Formulation of Dual Simplex Method, Rules for Constructing Dual from Primal, Advantages
+Artificial Variables, Big M Methods, Bounded/Unbounded Solution, Pseudo Optimum Solution, Degeneracy,
+Two Phase Simplex Method, Dual Simplex Method, Relationship of Primal and Dual, Formulation of Dual Simplex Method, Rules for Constructing Dual from Primal, Advantages
 Duality and Computation of Replacement Ratio, Bounded/Unbounded Solution, Pseudo Optimum Solution, Degeneracy
 Comparison of Duality and Dual Simplex Method
 Introduction to Simulation - Definition, Working Area of Simulation, Steps of Simulation Process, Advantages and Disadvantages of Simulation, Role of Simulation in Computer Science, Applications
 Introduction to Sequencing Problem, Processing n Jobs through Two Machines
 
 Unit 3 - Transportation and Assignment Models
-Transportation and Assignment Models - Special Case of LPP Model, Problem Formulation, Transportation Algorithms NWCR, LCM, VAM, Finding Optimal Solution using MODI Method
+Transportation and Assignment Models - Special Case of LPP Model, Problem Formulation, Transportation Algorithms: NWCR, LCM, VAM, Finding Optimal Solution using MODI Method
 Assignment Problem and Problem Formulation, Hungarian Method Traveling Salesman Problem, Advantages and Applications of Transportation and Assignment Model
 Game Theory - Introduction, Two Person Zero Sum Games, Pure Strategies, Games with Saddle Point
 Introduction to Decision Theory - Steps in Decision Theory Approach, Types of Decision Making Environments, Decision Making under Uncertainty, Criteria of Regret
@@ -102,12 +102,12 @@ Newton’s Backward Difference Interpolation, Lagrange’s Interpolation
 *Web Services*
 Unit 1 - Introduction to Web Services using SOAP
 Web Services Basics - What Are Web Services, Types of Web Services, Software-as-a-Service, Characteristics of Web Services, Service Oriented Architecture
-Distributed Computing Infrastructure - Distributed Computing and Internet Protocols, Client-Server model, Characteristics of Overview of XML, SOAP
+Distributed Computing Infrastructure - Distributed Computing and Internet Protocols, Client-Server Model, Characteristics of Overview of XML, SOAP
 Building Web Services with JAX-WS, Registering and Discovering Web Services, Web Services Development Life Cycle, Developing and Consuming Simple Web Services across Platforms
 
 Unit 2 - RESTFUL Web Services
 The REST Architectural Style - Introducing HTTP, The Core Architectural Elements of a RESTful System, Description and Discovery of RESTful Web Services
-Java Tools and Frameworks for Building RESTful Web Wervices, JSON Message Format and Tools and Frameworks around JSON, Build RESTful Web Services with JAX-RS APIs, The Description and Discovery of RESTful Web Services, Design Guidelines for Building RESTful Web Services, Secure RESTful Web Services
+Java Tools and Frameworks for Building RESTful Web Services, JSON Message Format and Tools and Frameworks around JSON, Build RESTful Web Services with JAX-RS APIs, The Description and Discovery of RESTful Web Services, Design Guidelines for Building RESTful Web Services, Secure RESTful Web Services
 Introduction to Node.js, Features of Node.js, Applications of Node.js, Environment Setup, Creating Node.js Application, Callback, Node Package Manager (NPM), Event-Driven Programming, Creating Web Server, Express Overview
 
 Unit 3 - GraphQL
@@ -118,7 +118,7 @@ GraphQL Client and Server, Connecting with Database via Prisma, GraphQL Tools an
 Unit 4 - Apply and Develop Service-Oriented Applications with WCF and get familiar with latest Web Service Platforms
 What Is Windows Communication Foundation, Fundamental Windows Communication Foundation Concepts
 Windows Communication Foundation Architecture, WCF and .NET Framework Client Profile, Basic WCF Programming
-WCF Feature Details. Web Service QoS, Introduction Latest Web Services Platforms
+WCF Feature Details, Web Service QoS, Introduction Latest Web Services Platforms
 
 
 
