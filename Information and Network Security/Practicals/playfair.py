@@ -35,7 +35,7 @@ def getMatrix(keyword):
       letter += 1
   return grid
 
-def getPairs(text):
+def getPairsEncrypt(text):
   pairs = []
   text = list(text)
   l = len(text)
@@ -53,6 +53,23 @@ def getPairs(text):
     i += 2
   return pairs
 
+def getPairsDecrypt(text):
+  pairs = []
+  text = list(text)
+  l = len(text)
+  i = 0
+  while i < l:
+    if text[i] == 'I':
+      pairs.append(text[i:i+3])
+      i += 1
+    else:
+      if text[i+1] == 'I':
+        pairs.append(f'{text[i]}{''.join(text[i+1:i+4])}')
+        i += 2
+      else: pairs.append(f'{text[i]}{text[i+1]}')
+    i += 2
+  return pairs
+
 def getPositions(grid):
   positions = {}
   for row in range(5):
@@ -62,7 +79,7 @@ def getPositions(grid):
 
 def encrypt(plaintext, key):
   grid = getMatrix(key)
-  pairs = getPairs(plaintext.upper())
+  pairs = getPairsEncrypt(plaintext.upper())
   positions = getPositions(grid)
   ciphertext = ""
   for pair in pairs:
@@ -75,20 +92,20 @@ def encrypt(plaintext, key):
 
 def decrypt(ciphertext, key):
   grid = getMatrix(key)
-  pairs = getPairs(ciphertext.upper())
+  pairs = getPairsDecrypt(ciphertext.upper())
   positions = getPositions(grid)
   plaintext = ""
   for pair in pairs:
     [row1, col1] = positions[pair[0]] if pair[0] not in 'IJ' else positions['I/J']
     [row2, col2] = positions[pair[1]] if pair[1] not in 'IJ' else positions['I/J']
-    if row1 == row2: plaintext += grid[row1][(col1 + 1) % 5] + grid[row1][(col2 + 1) % 5]
-    elif col1 == col2: plaintext += grid[(row1 + 1) % 5][col1] + grid[(row2 + 1) % 5][col1]
+    if row1 == row2: plaintext += grid[row1][(col1 + 4) % 5] + grid[row1][(col2 + 4) % 5]
+    elif col1 == col2: plaintext += grid[(row1 + 4) % 5][col1] + grid[(row2 + 4) % 5][col1]
     else: plaintext += grid[row2][col1] + grid[row1][col2]
   return plaintext
 
 key = input("Enter keyword: ").upper()
 text = input("Enter message: ")
 e = encrypt(text, key)
-d = decrypt(e, key)
 print(f"Encrypted message: {e}")
+d = decrypt(e, key)
 print(f"Decrypted message: {d}")
