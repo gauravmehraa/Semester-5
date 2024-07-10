@@ -17,7 +17,8 @@ def getMatrix(keyword):
   for row in range(5):
     for col in range(5):
       if key[ptr] == letter: letter += 1
-      grid[row][col] = key[ptr]
+      elif key[ptr] == 'I' or key[ptr] == 'J': grid[row][col] = 'I/J'
+      else: grid[row][col] = key[ptr]
       ptr += 1
       if ptr >= len(key): break
     if ptr >= len(key): break
@@ -26,9 +27,12 @@ def getMatrix(keyword):
   for row in range(5):
     for col in range(5):
       if grid[row][col] != '_': continue
-      while chr(letter) in keyset: letter += 1
+      while chr(letter) in keyset:
+        if letter == 73: letter += 1
+        elif letter == 74: letter += 1
+        letter += 1
       if letter == 73:
-        grid[row][col] = 'I/J'
+        grid[row][col] = key[ptr]
         letter += 1
       else:
         grid[row][col] = chr(letter)
@@ -64,7 +68,7 @@ def getPairsDecrypt(text):
       i += 1
     else:
       if text[i+1] == 'I':
-        pairs.append(f'{text[i]}{''.join(text[i+1:i+4])}')
+        pairs.append(f"{text[i]}{''.join(text[i+1:i+4])}")
         i += 2
       else: pairs.append(f'{text[i]}{text[i+1]}')
     i += 2
