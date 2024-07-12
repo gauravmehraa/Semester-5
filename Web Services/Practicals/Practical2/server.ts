@@ -27,7 +27,7 @@ const server: Server = createServer((req: IncomingMessage, res: ServerResponse) 
 function collectData(request: IncomingMessage, callback: CallableFunction) {
     if(request.headers['content-type'] === 'text/plain') {
         let body = '';
-        request.on('data', chunk => {
+        request.on('data', (chunk: any) => {
             body += chunk.toString();
         });
         request.on('end', () => {
