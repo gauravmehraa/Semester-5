@@ -18,7 +18,6 @@ def add(graph, u, v):
   graph[v].append(u)
 
 def main():
-  vertices = 5
   graph = defaultdict(list)
   add(graph, 0, 1)
   add(graph, 0, 2)
