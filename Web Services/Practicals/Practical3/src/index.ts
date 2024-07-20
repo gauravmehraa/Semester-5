@@ -90,7 +90,7 @@ const readFile = (): Array<User> => {
 
 const writeFile = (data: Array<User>): void => {
     const filePath: string = path.join(process.cwd(), 'src/users.json');
-    fs.writeFileSync(filePath, JSON.stringify(data) ,"utf-8");
+    fs.writeFileSync(filePath, JSON.stringify(data), "utf-8");
 }
 
 app.listen(3000, () => {
