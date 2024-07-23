@@ -1,24 +1,20 @@
 import queue
 
-def select(open):
-  for node in open:
-    print(node)
-  return
-
-def a_star(graph, start, end, heuristic):
-  open = [start]
+def a_star(graph, start, heuristic):
+  fringe = queue.PriorityQueue()
   path = []
   distance = 0
-  fringe = queue.PriorityQueue()
+
   fringe.put((heuristic[start] + distance, [start, 0]))
-  while not fringe.empty():
-    current = fringe.get()[1]
-    path.append(current)
-    if current == end: break
+  while fringe.empty() == False:
+    [currentnode, travelled] = fringe.get()[1]
+    path.append(currentnode)
+    distance += travelled
+    if currentnode == "B": break
     fringe = queue.PriorityQueue()
-    for neighbor in graph[current[0]]:
-      if neighbor[0] not in path: fringe.put
-  return None
+    for [neighbor, gn] in graph[currentnode]:
+      if neighbor not in path: fringe.put((heuristic[neighbor] + gn + distance, [neighbor, gn]))
+  return path
 
 def add(graph, u, v, cost):
   if graph.get(u): graph[u].append((v, cost))
@@ -53,14 +49,13 @@ def main():
   add(graph, "I", "N", 87)
 
   heuristic = {
-    "A":  366, "B": 0, "C": 160, "D": 242, "E": 161, "F":167, "G": 77,
-    "H": 151, "I": 226, "L": 244, "M": 241, "N": 234, "O": 380, "P": 100,
+    "A":  366, "B": 0, "C": 160, "D": 242, "E": 161, "F": 178, "G": 77,
+    "H": 151, "I": 226, "L": 244, "M": 241, "N": 234, "O": 380, "P": 98,
     "R": 193, "S": 253, "T": 329, "U": 80, "V": 199, "Z": 374
   }
 
   start = input("Enter start node: ")
-  end = input("Enter goal node: ")
-  path = a_star(graph, start, end, heuristic)
+  path = a_star(graph, start, heuristic)
   if path: print(path)
   else: print("No path found")
 
