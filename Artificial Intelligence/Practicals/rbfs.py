@@ -59,7 +59,7 @@ def main():
   start = input("Enter start node: ")
   path, cost = rbfs(graph, start, float('inf'), 0, heuristic)
   if path:
-    print(f"Path: {[start] + path}")
+    print(f"Path: {path}")
     print(f"Cost: {cost}")
   else: print("No path found")
 
