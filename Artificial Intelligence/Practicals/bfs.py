@@ -1,7 +1,7 @@
 from collections import defaultdict
 
 def bfs(graph, start):
-  visited = {start}
+  visited = {start} # set
   queue = [start]
   while queue:
     current = queue[0]
