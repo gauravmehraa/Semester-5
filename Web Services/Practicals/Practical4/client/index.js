@@ -1,5 +1,5 @@
 const getUsers = async() => {
-  const response = await  fetch('http://localhost:3000/')
+  const response = await fetch('http://localhost:3000/')
   const data = await response.json();
   data.forEach(element => {
     console.log();

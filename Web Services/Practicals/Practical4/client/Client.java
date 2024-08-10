@@ -2,7 +2,6 @@ import java.io.*;
 import java.net.*;
 
 public class Client{
-
   public static void getUsers() throws Exception {
     StringBuilder result = new StringBuilder();
     URL url = new URL("http://localhost:3000");
