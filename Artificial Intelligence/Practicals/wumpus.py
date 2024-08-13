@@ -1,67 +1,53 @@
-def display(map):
-  for row in map:
-    for col in row:
-      print(col, end='')
-    print()
+from queue import PriorityQueue
 
-def dfs(map, x, y, moves, directions):
-  if directions: return
-  if x < 0 or y < 0: return
-  if x >= len(map) or y >= len(map[0]): return
-  if map[x][y] == 'G': 
-    directions.append(moves)
-    return
-  if map[x][y] != '0': return
-  map[x][y] = 'X'
-  dfs(map, x + 1, y, moves+["D"], directions)
-  dfs(map, x - 1, y, moves+["U"], directions)
-  dfs(map, x, y + 1, moves+["R"], directions)
-  dfs(map, x, y - 1, moves+["L"], directions)
-  map[x][y] = '0'
+class KnowledgeBase:
+  def __init__(self):
+    self.kb = []
 
-def findGold(start):
-  x, y = start
-  if map[x][y] != '0':
-    print("Cell not empty")
-    return
-  directions = []
-  dfs(map, x, y, [], directions)
-  if not directions: print("No path found")
-  else:
-    print(f"Moves: {len(directions[0])}")
-    print(directions[0])
+  def tell(self, sentence) -> None:
+    if sentence not in self.kb:
+      self.kb.append(sentence)
+      self.kb = sorted(self.kb, key=lambda x: len(x))
 
-map = [['0', '0', '0', '0', '0'],
-       ['0', '1', '1', '1', '1'],
-       ['0', '0', '0', '0', '0'],
-       ['1', '0', '0', '0', '0'],
-       ['0', '0', '0', '1', '0'],
-       ['0', '1', '0', '0', '0'],
-       ['0', '1', '1', '1', '0'],
-       ['0', '0', 'G', '0', '0']]
+  def ask(self, query) -> bool:
+    return False
 
-map = [
-    ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'],
-    ['0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0'],
-    ['0', '0', '1', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0'],
-    ['0', '0', '1', '0', '0', '1', '0', '0', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0'],
-    ['0', '0', '0', '0', '0', '0', '0', '1', '0', '1', '1', '0', '0', '0', '0', '1', '0', '0', '0', '0'],
-    ['0', '1', '1', '0', '0', '0', '0', '1', '0', '0', '1', '0', '0', '0', '0', '1', '0', '0', '0', '0'],
-    ['0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1', '1', '1', '0', '0', '0', '0', '0', '0'],
-    ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'],
-    ['0', '0', '1', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'],
-    ['0', '0', '1', '1', '0', '0', '0', '1', '0', '0', '0', '1', '1', '1', '0', '1', '0', '0', '0', '0'],
-    ['0', '0', '0', '0', '0', '1', '0', '1', '0', '0', '1', '0', '0', '0', '1', '0', '0', '0', '0', '0'],
-    ['0', '1', '1', '0', '0', '0', '0', '1', '1', '0', '0', '0', '1', '0', '0', '0', '1', '0', '0', '0'],
-    ['0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0'],
-    ['0', '0', '0', '1', '0', '0', '0', '0', '1', '1', '1', '0', '0', '1', '0', '0', '0', '0', '0', '0'],
-    ['0', '0', '0', '1', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'],
-    ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0'],
-    ['0', '1', '1', '1', '1', '0', '1', '0', '0', '0', '1', '1', '0', '1', '0', '0', '1', '0', '0', '0'],
-    ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'G']
-]
+  def compare(self, query1, query2) -> None:
+    pass
+
+  def remove(self, sentence) -> None:
+    pass
 
 
-display(map)
+class AI:
+  def __init__(self):
+    self.kb = KnowledgeBase()
+    self.moves = []
+    self.wumpus = True
+    self.arrow = True
+  
+  def getAction(self, stench, breeze, glitter):
+    pass
 
-findGold((0, 0))
+  def onBreeze(self, current):
+    pass
+
+  def onStench(self, current):
+    pass
+
+  def walk(self):
+    pass
+
+  def killWumpus(self, direction) -> None:
+    if direction == "Right": pass
+    elif direction == "Left": pass
+    elif direction == "Up": pass
+    elif direction == "Down": pass
+
+
+def main():
+  print('hello')
+  pass
+
+if __name__ == "__main__":
+  main()
