@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 def rbfs(graph, start, f_limit, g_cost, heuristic):
   successors = []
   for (neighbor, cost) in graph[start]:
@@ -19,13 +21,11 @@ def rbfs(graph, start, f_limit, g_cost, heuristic):
     if best[2] > f_limit: return None, best[2]
 
 def add(graph, u, v, cost):
-  if graph.get(u): graph[u].append((v, cost))
-  else: graph[u] = [(v, cost)]
-  if graph.get(v): graph[v].append((u, cost))
-  else: graph[v] = [(u, cost)]
+  graph[u].append((v, cost))
+  graph[v].append((u, cost))
 
 def main():
-  graph = {}
+  graph = defaultdict(list)
   add(graph, "A", "Z", 75)
   add(graph, "A", "T", 118)
   add(graph, "A", "S", 140)

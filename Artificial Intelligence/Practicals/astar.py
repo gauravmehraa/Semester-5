@@ -1,7 +1,8 @@
-import queue
+from queue import PriorityQueue
+from collections import defaultdict
 
 def a_star(graph, start, heuristic):
-  fringe = queue.PriorityQueue()
+  fringe = PriorityQueue()
   path = []
   distance = 0
 
@@ -11,19 +12,17 @@ def a_star(graph, start, heuristic):
     path.append(currentnode)
     distance += travelled
     if currentnode == "B": break
-    fringe = queue.PriorityQueue()
+    fringe = PriorityQueue()
     for [neighbor, gn] in graph[currentnode]:
       if neighbor not in path: fringe.put((heuristic[neighbor] + gn + distance, [neighbor, gn]))
   return path
 
 def add(graph, u, v, cost):
-  if graph.get(u): graph[u].append((v, cost))
-  else: graph[u] = [(v, cost)]
-  if graph.get(v): graph[v].append((u, cost))
-  else: graph[v] = [(u, cost)]
+  graph[u].append((v, cost))
+  graph[v].append((u, cost))
 
 def main():
-  graph = {}
+  graph = defaultdict(list)
   add(graph, "A", "Z", 75)
   add(graph, "A", "T", 118)
   add(graph, "A", "S", 140)
