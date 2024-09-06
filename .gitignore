@@ -2,5 +2,6 @@ node_modules
 Project
 private
 
+.env
 dist
 build
