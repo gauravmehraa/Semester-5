@@ -9,6 +9,7 @@ def getAlpha(q):
     for i in range(1, q):
       if i not in values:
         valid = False
+        break
       
     if valid:
       alpha = a

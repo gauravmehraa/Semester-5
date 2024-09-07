@@ -10,10 +10,22 @@ class Player:
     pass
 
   def turnLeft(self):
-    pass
+    leftmove = {
+      "Right": "Up",
+      "Up": "Left",
+      "Left": "Down",
+      "Down": "Right"
+    }
+    self.direction = leftmove[self.direction]
 
   def turnRight(self):
-    pass
+    rightmove = {
+      "Right": "Down",
+      "Down": "Left",
+      "Left": "Up",
+      "Up": "Right"
+    }
+    self.direction = rightmove[self.direction]
 
   def __repr__(self) -> str:
     return (f"Current State: {self.state.name}\nCurrent Direction: {self.direction}")
