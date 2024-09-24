@@ -1,44 +1,31 @@
-class Node:
-    def __init__(self, value, parent=None):
-        self.value = value
-        self.parent = parent
-        self.children = []
+def minimax(nodes, depth, alpha, beta, player, index=0):
+    if depth == 0 or 2*index >= len(nodes): return nodes[index]
 
-    def add(self, value):
-        child = Node(value, parent=self)
-        self.children.append(child)
-        return child
-
-def minimax(node, depth, alpha, beta, player1):
-    if depth == 0 or not node.children:
-        return node.value
-    if player1:
+    if player == 1:
         maximum = float('-inf')
-        for child in node.children:
-            eval = minimax(child, depth - 1, alpha, beta, False)
-            maximum = max(maximum, eval)
-            alpha = max(alpha, eval)
-            if beta <= alpha: break
+        maximum = max(maximum, minimax(nodes, depth-1, alpha, beta, False, 2*index))
+        alpha = max(alpha, maximum)
+        if beta <= alpha: return maximum
+        maximum = max(maximum, minimax(nodes, depth-1, alpha, beta, False, 2*index+1))
+        alpha = max(alpha, maximum)
         return maximum
+
     else:
         minimum = float('inf')
-        for child in node.children:
-            eval = minimax(child, depth - 1, alpha, beta, True)
-            minimum = min(minimum, eval)
-            beta = min(beta, eval)
-            if beta <= alpha: break
+        minimum = min(minimum, minimax(nodes, depth-1, alpha, beta, True, 2*index))
+        beta = min(beta, minimum)
+        if beta <= alpha: return minimum
+        minimum = min(minimum, minimax(nodes, depth-1, alpha, beta, True, 2*index+1))
+        beta = min(beta, minimum)
         return minimum
 
-root = Node(0)
-child1 = root.add(0)
-child2 = root.add(1)
-child3 = root.add(2)
-child1.add(3)
-child1.add(4)
-child2.add(5)
-child2.add(6)
-child3.add(7)
-child3.add(8)
+def main():
+    player = int(input("Player 1 or 2? "))
+    depth = int(input("Enter depth of tree: "))
+    nodes = [0 for _ in range(2 ** depth)]
+    for i in range(len(nodes)):
+        nodes[i] = int(input(f"Enter value of terminal node {i+1}: "))
+    best = minimax(nodes, depth, float('-inf'), float('inf'), player)
+    print(f"\nBest for Player {player}: {best}")
 
-best = minimax(root, depth=3, alpha=float('-inf'), beta=float('inf'), player1=True)
-print(f"Best value: {best}")
+main()
