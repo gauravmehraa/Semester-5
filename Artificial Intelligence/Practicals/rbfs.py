@@ -15,6 +15,7 @@ def rbfs(graph, start, f_limit, g_cost, heuristic):
     if best[0] == "B": return [best[0]], best[2]
     
     alternate = successors[1][2] if len(successors) > 1 else float('inf')
+    if best[2] > f_limit: return None, best[2]
     result, best[2] = rbfs(graph, best[0], min(f_limit, alternate), best[1], heuristic)
 
     if result: return [best[0]] + result, best[2]
@@ -59,7 +60,7 @@ def main():
   start = input("Enter start node: ")
   path, cost = rbfs(graph, start, float('inf'), 0, heuristic)
   if path:
-    print(f"Path: {path}")
+    print(f"Path from {start}: {path}")
     print(f"Cost: {cost}")
   else: print("No path found")
 
