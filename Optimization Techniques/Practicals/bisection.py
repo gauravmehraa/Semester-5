@@ -1,20 +1,22 @@
 import math
+DEGREE = 5
+
 def display(coeffs):
   print('f(x) = ', end='')
-  for i in range(4, -1, -1):
-    current = coeffs[4-i]
+  for i in range(DEGREE, -1, -1):
+    current = coeffs[DEGREE-i]
     if math.trunc(current) == int(current): current = int(current)
-    if current > 0: sign = '+' if i != 4 else '' # ignore plus for first element
+    if current > 0: sign = '+' if i != DEGREE else '' # ignore plus for first element
     if current < 0: sign = '-'
     if current != 0:
-      current = '' if abs(current)== 1 else abs(current) 
+      current = '' if abs(current)== 1 and i != 0 else abs(current) 
       if i == 0: print(f'{sign} {current}') # ignore x^0 for last coefficient
       else: print(f'{sign} {current}x^{i}', end=' ')
 
 def f(x):
   result = 0
-  for i in range(4):
-    result += coeffs[4-i] * (x ** i)
+  for i in range(DEGREE + 1):
+    result = result + (coeffs[i] * (x ** (DEGREE - i)))
   return result
 
 def getInterval(initial=1):
@@ -28,22 +30,20 @@ def getInterval(initial=1):
 
 def bisection():
   lower, upper, signs = getInterval()
-  prev = -1
   while True:
     xi = (lower + upper)/2
-    # if round(prev, 5) == round(xi, 5): return None
     answer = f(xi)
-    if round(answer, 5) == 0.0000: return xi
+    if round(answer, 5) == 0.0000:
+      return xi
     if signs == '-+':
       if f(xi) < 0: lower = xi
       else: upper = xi
     else:
       if f(xi) > 0: lower = xi
       else: upper = xi
-    # prev = xi
 
 coeffs = []
-for power in range(4, -1, -1):
+for power in range(DEGREE, -1, -1):
   coeffs.append(float(input(f"Enter coefficient of x^{power}: ")))
 display(coeffs)
 root = bisection()
