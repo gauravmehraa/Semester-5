@@ -7,7 +7,8 @@ Iterative Improvement Algorithms - Hill Climbing and Simulated Annealing, Geneti
 
 Unit 2 - Game Playing & Symbolic AI
 Game Playing - Overview and Example Domain, Min-Max Search, Adding Alpha-Beta Cutoffs
-First Order Predicate Logic - Unification, Forward Chaining-Backward Chaining, Resolution, Knowledge Representation, Ontological Engineering-Categories and Objects, Events, Mental Events and Mental Objects, Reasoning Systems for Categories, Reasoning with Default Information
+First Order Predicate Logic - Unification, Forward Chaining-Backward Chaining, Resolution, Knowledge Representation
+Ontological Engineering - Categories and Objects, Events, Mental Events and Mental Objects, Reasoning Systems for Categories, Reasoning with Default Information
 
 Unit 3 - Probabilistic Reasoning-Based AI
 Probabilistic Reasoning - Representing Knowledge in an Uncertain Domain, The Semantics of Belief Networks, Efficient Representation of Conditional Distribution, Exact Inference in Bayesian Network, Approximate Inference in Bayesian Network

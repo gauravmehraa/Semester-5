@@ -2,17 +2,27 @@ import random
 
 def f(x): return -(x - 3)**2 + 10
 
-def getneighbor(x, step): return x + random.choice([-step, step])
-
 def hillclimbing(start):
   optima = start
   height = f(start)
   while True:
-    neighbor = getneighbor(optima, 0.01)
-    neighborheight = f(neighbor)
-    if neighborheight >= optima:
-      optima = neighbor
-      height = neighborheight
+    leftNeighbor = optima - 0.01
+    rightNeighbor = optima + 0.01
+    leftHeight = f(leftNeighbor)
+    rightHeight = f(rightNeighbor)
+    if leftHeight >= height and rightHeight >= height:
+      if leftHeight >= rightHeight:
+        optima = leftNeighbor
+        height = leftHeight
+      else:
+        optima = rightNeighbor
+        height = rightHeight
+    elif leftHeight >= height:
+      optima = leftNeighbor
+      height = leftHeight
+    elif rightHeight >= height:
+      optima = rightNeighbor
+      height = rightHeight
     else: break
   return optima, height
 
