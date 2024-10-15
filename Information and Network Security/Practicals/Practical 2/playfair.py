@@ -1,17 +1,18 @@
 def getKeyword(keyword):
   key = ""
   chars = set()
-  for char in keyword:
-    if char not in chars: key += char
-    chars.add(char)
+  for char in keyword.upper():
+    if char == 'J': char = 'I'
+    if char not in chars:
+      key += char
+      chars.add(char)
   return key
 
 def getMatrix(keyword):
   key = getKeyword(keyword)
   keyset = set(key)
-  grid = [['_' for _ in range(5)] for _ in range(5)]
-  ptr = 0
-  letter = 65
+  grid = []
+  alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ"
 
   # Fill word
   for row in range(5):
