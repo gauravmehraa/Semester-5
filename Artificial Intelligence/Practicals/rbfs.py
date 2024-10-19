@@ -1,24 +1,27 @@
 from collections import defaultdict
 
-def rbfs(graph, start, f_limit, g_cost, heuristic):
+def rbfs(graph, node, f_limit, g_cost, heuristic):
+  if node == "B": return [node], g_cost
+
   successors = []
-  for (neighbor, cost) in graph[start]:
+  for (neighbor, cost) in graph[node]:
     g = g_cost + cost
-    f = g + heuristic[neighbor] # f = g + h
+    f = g + heuristic[neighbor]
     successors.append([neighbor, g, f])
-  
+
   if len(successors) == 0: return None, float('inf')
 
   while True:
-    successors.sort(key=lambda x:x[2]) # sort by f (3rd element)
+    successors.sort(key=lambda x: x[2]) # sort by f - 3rd value
     best = successors[0]
-    if best[0] == "B": return [best[0]], best[2]
-    
-    alternate = successors[1][2] if len(successors) > 1 else float('inf')
     if best[2] > f_limit: return None, best[2]
-    result, best[2] = rbfs(graph, best[0], min(f_limit, alternate), best[1], heuristic)
 
-    if result: return [best[0]] + result, best[2]
+    if len(successors) > 1: alternative = successors[1][2]
+    else: alternative = float('inf')
+
+    result, best_f = rbfs(graph, best[0], min(f_limit, alternative), best[1], heuristic)
+    best[2] = best_f
+    if result is not None: return [node] + result, best_f
     if best[2] > f_limit: return None, best[2]
 
 def add(graph, u, v, cost):
