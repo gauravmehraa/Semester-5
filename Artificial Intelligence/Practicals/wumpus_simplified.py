@@ -1,10 +1,8 @@
-from collections import deque
-
 def get_neighbours(x, y):
   neighbours = []
   for dx, dy in [(-1,0), (1,0), (0,-1), (0,1)]: 
     nx, ny = x + dx, y + dy
-    if 0 <= nx <= N and 0 <= ny <= N: neighbours.append((nx, ny))
+    if 0 <= nx < N and 0 <= ny < N: neighbours.append((nx, ny))
   return neighbours
 
 def perceive(x, y): return world[x][y]
@@ -68,6 +66,7 @@ def infer():
 def solve():
   x, y = 0, 0
   path = [(x, y)]
+  history = [(x, y)]
   visited = set()
   visited.add((x, y))
   update_kb(x, y, perceive(x, y))
@@ -75,12 +74,14 @@ def solve():
     percepts = perceive(x, y)
     if 'G' in percepts:
       print("Gold found:", (x, y))
-      print("Path:", path)
+      print("Final Path:", path)
+      print("Movement History:", history)
       return
     possible_moves = [(nx, ny) for nx, ny in get_neighbours(x, y) if (nx, ny) not in visited and kb[nx][ny]['Safe'] == True]
     if possible_moves:
       nx, ny = possible_moves[0]
       path.append((nx, ny))
+      history.append((nx, ny))
       x, y = nx, ny
       visited.add((x, y))
       update_kb(x, y, perceive(x, y))
@@ -88,6 +89,7 @@ def solve():
       if len(path) > 1:
         path.pop()
         x, y = path[-1]
+        history.append((x, y))
       else:
         print("No path to the gold found.")
         return
