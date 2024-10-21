@@ -6,7 +6,8 @@ def encrypt(plaintext, depth):
   for char in plaintext: # construct rails by travesing diagonally
     rows[current].append(char)
     current = current + 1 if direction == 'S' else current - 1
-    if current == depth-1 or current == 0: direction = 'N' if direction == 'S' else 'S'
+    if current == depth-1 or current == 0:
+      direction = 'N' if direction == 'S' else 'S'
 
   for row in rows:
     for char in row:
