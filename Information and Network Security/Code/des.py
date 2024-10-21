@@ -2,6 +2,9 @@ from Crypto.Cipher import DES
 from Crypto.Util.Padding import pad, unpad
 from Crypto.Random import get_random_bytes
 
+# pip uninstall crypto
+# pip install pycryptodome
+
 def encrypt(plaintext, key):
   if len(key) != 8:
     print("Key must be 8 bytes long")

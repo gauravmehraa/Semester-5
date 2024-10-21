@@ -2,6 +2,9 @@ from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad, unpad
 from Crypto.Random import get_random_bytes
 
+# pip uninstall crypto
+# pip install pycryptodome
+
 def encrypt(plaintext, key):
   if len(key) not in (16, 24, 32):
     print("Key must be 16/24/32 bytes long")
