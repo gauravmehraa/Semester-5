@@ -36,9 +36,9 @@ def solve(volume1, volume2, target):
   return None # no solution found
 
 def main():
-  volume1 = int(input("Enter volume of first jug: "))
-  volume2 = int(input("Enter volume of second jug: "))
-  target = int(input("Enter volume to be measured: "))
+  volume1 = int(input("Enter volume of first jug: ")) # 4
+  volume2 = int(input("Enter volume of second jug: ")) # 3
+  target = int(input("Enter volume to be measured: ")) # 2
   solution = solve(volume1, volume2, target)
   if solution is None: print("No solution exists")
   else:

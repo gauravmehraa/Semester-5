@@ -22,6 +22,7 @@ def minimax(nodes, depth, alpha, beta, player1, index=0):
 def main():
     depth = int(input("Enter depth of tree: "))
     nodes = [0 for _ in range(2 ** depth)]
+    # nodes = [2, 3, 5, 9, 0, 1, 7, 5] depth = 3, best = 3 for p1, 5 for p2
     for i in range(len(nodes)):
         nodes[i] = int(input(f"Enter value of terminal node {i+1}: "))
     best = minimax(nodes, depth, float('-inf'), float('inf'), True)

@@ -1,6 +1,6 @@
 import random
 
-def f(x): return -(x - 3)**2 + 10
+def f(x): return -(x - 3)**2 + 10  #highest at 3 = 10
 
 def hillclimbing(start):
   optima = start
