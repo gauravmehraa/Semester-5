@@ -22,7 +22,8 @@ def decrypt(ciphertext, depth):
   for char in ciphertext: # construct empty rails by travesing diagonally
     rows[current].append("*")
     current = current + 1 if direction == 'S' else current - 1
-    if current == depth-1 or current == 0: direction = 'N' if direction == 'S' else 'S'
+    if current == depth-1 or current == 0:
+      direction = 'N' if direction == 'S' else 'S'
 
   char = 0
   for rail in rows:
@@ -36,7 +37,8 @@ def decrypt(ciphertext, depth):
     plaintext += rows[current][0]
     del rows[current][0]
     current = current + 1 if direction == 'S' else current - 1
-    if current == depth-1 or current == 0: direction = 'N' if direction == 'S' else 'S'
+    if current == depth-1 or current == 0:
+      direction = 'N' if direction == 'S' else 'S'
     
   return plaintext
 
@@ -45,4 +47,4 @@ depth = int(input("Enter depth: "))
 e = encrypt(text, depth)
 print(f"\nEncrypted message: {e}")
 d = decrypt(e, depth)
-print(f"Decrypted message: {d}")
+print(f"Decrypted message: {d}") 
